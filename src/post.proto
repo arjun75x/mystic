@@ -1,0 +1,9 @@
+syntax="proto3";
+package main;
+option go_package = "/main";
+
+message Post {
+    string  id = 1;
+    uint64  ttl = 2;
+    string  data = 3;
+}

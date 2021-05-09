@@ -1,0 +1,14 @@
+syntax="proto3";
+package main;
+option go_package = "/main";
+
+import "post.proto";
+
+message Message {
+    // Central Server: 0 is join, 1 for follow, 2 for unfollow, 3 for post, 4 for view, 5 for resent post
+    // User: 0 is timeline posts, 1 is a request for a post based on id
+    uint32  type = 1;
+    string  username = 2; 
+    repeated Post posts = 3;
+    string  optional = 4; // only user you're following or unfollowing for now
+}
